@@ -6,18 +6,28 @@
   <title>Fitting | 나에게 딱 맞는 운동 인연</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
-    body { font-family: 'Pretendard', sans-serif; }
+    body { font-family: 'Pretendard', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
     .bg-fitting { background-color: #4A90E2; }
     .text-fitting { color: #4A90E2; }
     .hero-gradient { background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" class="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-fitting text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+  <i id="theme-toggle-icon" class="fas fa-moon text-xl"></i>
+</button>
 
 <!-- Navigation -->
-<nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+<nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <div class="text-2xl font-black text-fitting italic">Fitting</div>
     <div class="hidden md:flex space-x-8 font-medium">
@@ -49,37 +59,37 @@
 </section>
 
 <!-- Features Section -->
-<section id="features" class="py-24 px-6 bg-gray-50">
+<section id="features" class="py-24 px-6 bg-gray-50 dark:bg-gray-800">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-black text-center mb-16">왜 핏팅이어야 할까요?</h2>
     <div class="grid md:grid-cols-3 gap-12">
-      <div class="bg-white p-8 rounded-3xl shadow-sm text-center">
-        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-fitting text-2xl mx-auto mb-6">
+      <div class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-sm text-center">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-fitting text-2xl mx-auto mb-6">
           <i class="fas fa-id-card"></i>
         </div>
         <h3 class="text-xl font-bold mb-4">스마트 핏팅 카드</h3>
-        <p class="text-gray-600">주간 운동 횟수와 활동 시간대 등 라이프스타일 데이터를 배지로 한눈에 확인하세요.</p>
+        <p class="text-gray-600 dark:text-gray-300">주간 운동 횟수와 활동 시간대 등 라이프스타일 데이터를 배지로 한눈에 확인하세요.</p>
       </div>
-      <div class="bg-white p-8 rounded-3xl shadow-sm text-center border-2 border-fitting">
+      <div class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-sm text-center border-2 border-fitting">
         <div class="w-16 h-16 bg-fitting rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6">
           <i class="fas fa-heart"></i>
         </div>
         <h3 class="text-xl font-bold mb-4">데일리 핏 (1:1 매칭)</h3>
-        <p class="text-gray-600">AI가 당신의 운동 강도와 장소를 분석해 매주 최적의 파트너를 직접 추천해 드립니다.</p>
+        <p class="text-gray-600 dark:text-gray-300">AI가 당신의 운동 강도와 장소를 분석해 매주 최적의 파트너를 직접 추천해 드립니다.</p>
       </div>
-      <div class="bg-white p-8 rounded-3xl shadow-sm text-center">
-        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-fitting text-2xl mx-auto mb-6">
+      <div class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-sm text-center">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-fitting text-2xl mx-auto mb-6">
           <i class="fas fa-history"></i>
         </div>
         <h3 class="text-xl font-bold mb-4">핏 로그 (Fit-Log)</h3>
-        <p class="text-gray-600">오늘의 운동을 기록하고 공유하며, 상대방의 꾸준함과 성실함을 검증해 보세요.</p>
+        <p class="text-gray-600 dark:text-gray-300">오늘의 운동을 기록하고 공유하며, 상대방의 꾸준함과 성실함을 검증해 보세요.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Report Section -->
-<section id="matching" class="py-24 px-6">
+<section id="matching" class="py-24 px-6 dark:bg-gray-900">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
     <div class="flex-1">
       <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Matching Experience" class="rounded-3xl shadow-2xl">
@@ -87,11 +97,11 @@
     <div class="flex-1">
       <span class="text-fitting font-bold tracking-widest uppercase">Fitting Report</span>
       <h2 class="text-4xl font-black mt-4 mb-6">운동 궁합 95%,<br>함께할 때 더 즐거우니까.</h2>
-      <p class="text-lg text-gray-600 mb-8">
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
         단순한 연결을 넘어, 두 분이 함께 운동할 때의 시너지를 분석해 드립니다. 같은 시간대, 비슷한 운동 루틴을 가진 사람과 완벽한 핏을 경험해 보세요.
       </p>
       <ul class="space-y-4">
-        <li class="flex items-center text-gray-700 font-medium">
+        <li class="flex items-center text-gray-700 dark:text-gray-200 font-medium">
           <i class="fas fa-check-circle text-fitting mr-3"></i> 매너 핏(Manner-Fit)으로 관리되는 깨끗한 커뮤니티
         </li>
       </ul>
@@ -110,6 +120,30 @@
     <p class="mt-8 text-gray-600 text-xs">© 2024 Fitting Project Team. All Rights Reserved.</p>
   </div>
 </section>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleIcon = document.getElementById('theme-toggle-icon');
+  const html = document.documentElement;
+
+  // Check initial theme
+  if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+    themeToggleIcon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      themeToggleIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      themeToggleIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+  });
+</script>
 
 </body>
 </html>
